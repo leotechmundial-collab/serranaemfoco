@@ -739,10 +739,13 @@
     .instagram-link { text-align: center; margin-top: 16px; }
     .instagram-link a { display: inline-flex; align-items: center; min-height: 48px; color: var(--accent); text-decoration: underline; text-underline-offset: 5px; font-size: 1rem; }
     .intro { display: block; text-align: center; }
-    .intro-note { max-width: 900px; margin: 28px auto 0; padding: 22px 24px; border: 1px solid #3a403a; border-radius: 14px; background: #1a1d1b; color: #e9ebe5; text-align: left; }
+    .intro h1 { max-width: 1100px; margin-inline: auto; text-wrap: balance; }
+    .intro h1 span { display: block; }
+    .intro h1 span + span { margin-top: .28em; }
+    .intro-note { max-width: 900px; margin: 0 auto 34px; padding: 22px 24px; border: 1px solid #c8cec3; border-radius: 14px; background: #fff; color: #273222; text-align: left; box-shadow: 0 10px 26px #1b211c0d; }
     .intro-note p { margin: 0; font-size: 1.05rem; line-height: 1.65; }
     .intro-note p + p { margin-top: 14px; }
-    .intro-note strong { color: var(--accent); }
+    .intro-note strong { display: inline-grid; place-items: center; width: 1.6em; height: 1.6em; border-radius: 50%; background: #1b211c; color: #daff6c; }
     .politicians .cards { align-items: start; }
     .profile-card { display: grid; grid-template-columns: 96px minmax(0, 1fr) 48px; align-items: center; gap: 18px; padding: 22px; background: #fff; border: 1px solid #c8cec3; border-radius: 18px; box-shadow: 0 12px 30px #1b211c12; }
     .profile-photo { width: 96px; height: 96px; margin: 0; border: 3px solid #d7ddcf; border-radius: 50%; overflow: hidden; background: #e6e9e1; }
@@ -763,6 +766,9 @@
     .profile-menu a:hover, .profile-menu a:focus-visible { border-color: #1456a0; background: #e7f0fb; color: #0b3f7a; }
     @media (max-width: 1000px) { .politicians .cards { grid-template-columns: 1fr; } }
     @media (max-width: 520px) {
+      .intro h1 { font-size: clamp(1.75rem, 7.4vw, 2.25rem); line-height: 1.16; letter-spacing: -.75px; }
+      .intro-note { margin-bottom: 24px; padding: 18px; }
+      .intro-note p { font-size: .98rem; line-height: 1.58; }
       .profile-card { grid-template-columns: 76px minmax(0, 1fr) 44px; gap: 13px; padding: 16px; border-radius: 14px; }
       .profile-photo { width: 76px; height: 76px; }
       .profile-name h2 { font-size: 1.05rem; }
@@ -800,14 +806,14 @@
         <a href="https://www.instagram.com/leo_hsribeiro?stkn=MWc1MDQ3Z211ZHBjbQ==" target="_blank" rel="noopener noreferrer">Instagram · @leo_hsribeiro</a>
       </div>
       <div class="intro">
-        <h1 id="intro-heading">Toda campanha sabe construir uma bela vitrine.<br>O problema é o que se encontra quando a gente decide olhar além do vidro.</h1>
-        <div class="intro-note">
-          <p>Aqui estão alguns dos candidatos da região que, de acordo com as matérias anexas, supostamente têm relações no mínimo estranhas com escândalos de corrupção.</p>
-          <p>Ao lado da foto e do partido existe um símbolo <strong>+</strong>. Lá se encontram os links de atalho para as matérias: é só clicar.</p>
-        </div>
+        <h1 id="intro-heading"><span>Toda campanha sabe construir uma bela vitrine.</span><span>O problema é o que se encontra quando a gente decide olhar além do vidro.</span></h1>
       </div>
     </section>
     <section class="politicians" aria-label="Baleia Rossi, Léo Oliveira, Fausto Pinato, Duarte Nogueira, Marcos Pereira, Carlos Zarattini e Isaac Antunes">
+      <div class="intro-note">
+        <p>Aqui estão alguns dos candidatos da região que, de acordo com as matérias anexas, supostamente têm relações no mínimo estranhas com escândalos de corrupção.</p>
+        <p>Ao lado da foto e do partido existe um símbolo <strong>+</strong>. Lá se encontram os links de atalho para as matérias: é só clicar.</p>
+      </div>
       <div class="cards">
         <article class="profile-card">
           <figure class="profile-photo"><img src="assets/baleia-rossi.jpg" alt="Baleia Rossi" loading="lazy" decoding="async" width="192" height="192"></figure>
