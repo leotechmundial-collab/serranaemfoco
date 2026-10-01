@@ -18,8 +18,8 @@
   const fail = () => {
     unavailable = true;
     button.disabled = false;
-    button.textContent = 'Entrar no site';
-    status.textContent = 'O YouTube não carregou o vídeo. Você pode entrar no site ou assistir pelo link abaixo.';
+    button.textContent = 'Veja antes que saia do ar';
+    status.textContent = 'O YouTube não carregou o vídeo. Use o botão para entrar no site.';
   };
   const loadTimer = setTimeout(fail, 15000);
   const url = new URL(frame.dataset.src);
@@ -33,7 +33,7 @@
           clearTimeout(loadTimer);
           unavailable = false;
           button.disabled = false;
-          button.textContent = 'Entrar no Serrana em Foco';
+          button.textContent = 'Veja antes que saia do ar';
           status.textContent = 'Ao entrar, o vídeo começa com som.';
         },
         onStateChange: (event) => {
@@ -58,10 +58,10 @@
     status.textContent = 'Iniciando o vídeo com som…';
     clearTimeout(playbackTimer);
     playbackTimer = setTimeout(() => {
-      status.textContent = 'Se o vídeo não iniciar, toque novamente ou continue no site.';
+      openSite();
     }, 7000);
   });
-  document.getElementById('continuar').addEventListener('click', openSite);
+
   const api = document.createElement('script');
   api.src = 'https://www.youtube.com/iframe_api';
   api.onerror = () => { clearTimeout(loadTimer); fail(); };
