@@ -742,9 +742,12 @@
     .intro h1 { max-width: 1100px; margin-inline: auto; text-wrap: balance; }
     .intro h1 span { display: block; }
     .intro h1 span + span { margin-top: .28em; }
+    .intro h1 em { position: relative; display: inline-block; padding: 0 .08em; font-size: 1.05em; font-style: italic; white-space: nowrap; }
+    .intro h1 em::after { content: ""; position: absolute; left: 2%; right: 2%; bottom: -.06em; height: .09em; border-radius: 999px; background: currentColor; transform: rotate(-1.5deg); opacity: .75; }
     .intro-note { max-width: 900px; margin: 0 auto 34px; padding: 22px 24px; border: 1px solid #c8cec3; border-radius: 14px; background: #fff; color: #273222; text-align: left; box-shadow: 0 10px 26px #1b211c0d; }
     .intro-note p { margin: 0; font-size: 1.05rem; line-height: 1.65; }
-    .intro-note p + p { margin-top: 14px; }
+    .intro-note p:first-child::first-letter { float: left; margin: .08em .12em 0 0; color: #51612e; font-family: Georgia, "Times New Roman", serif; font-size: 3.4em; font-weight: 700; line-height: .78; }
+    .intro-note p + p { margin-top: 18px; padding-top: 18px; border-top: 1px solid #dfe3da; font-weight: 700; }
     .intro-note strong { display: inline-grid; place-items: center; width: 1.6em; height: 1.6em; border-radius: 50%; background: #1b211c; color: #daff6c; }
     .politicians .cards { align-items: start; }
     .profile-card { display: grid; grid-template-columns: 96px minmax(0, 1fr) 48px; align-items: center; gap: 18px; padding: 22px; background: #fff; border: 1px solid #c8cec3; border-radius: 18px; box-shadow: 0 12px 30px #1b211c12; }
@@ -806,7 +809,7 @@
         <a href="https://www.instagram.com/leo_hsribeiro?stkn=MWc1MDQ3Z211ZHBjbQ==" target="_blank" rel="noopener noreferrer">Instagram · @leo_hsribeiro</a>
       </div>
       <div class="intro">
-        <h1 id="intro-heading"><span>Toda campanha sabe construir uma bela vitrine.</span><span>O problema é o que se encontra quando a gente decide olhar além do vidro.</span></h1>
+        <h1 id="intro-heading"><span>Toda campanha sabe construir uma <em>bela vitrine.</em></span><span>O problema é o que se encontra quando a gente decide olhar <em>além do vidro.</em></span></h1>
       </div>
     </section>
     <section class="politicians" aria-label="Baleia Rossi, Léo Oliveira, Fausto Pinato, Duarte Nogueira, Marcos Pereira, Carlos Zarattini e Isaac Antunes">
