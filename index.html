@@ -769,7 +769,7 @@
     .profile-menu a:hover, .profile-menu a:focus-visible { border-color: #1456a0; background: #e7f0fb; color: #0b3f7a; }
     @media (max-width: 1000px) { .politicians .cards { grid-template-columns: 1fr; } }
     @media (max-width: 520px) {
-      .live-video { width: 100vw; max-width: none; margin-left: calc(50% - 50vw); border-radius: 0; }
+      .live-video { width: calc(100% + 40px); max-width: none; margin-left: -20px; border-radius: 0; }
       .intro { margin-top: 18px; }
       .intro h1 { width: 80vw; padding: 13px 14px; border-radius: 11px; font-size: clamp(1rem, 4.4vw, 1.18rem); line-height: 1.22; letter-spacing: -.2px; }
       .intro-note { margin-bottom: 24px; padding: 18px; }
@@ -778,6 +778,9 @@
       .profile-photo { width: 76px; height: 76px; }
       .profile-name h2 { font-size: 1.05rem; }
       .profile-links summary { width: 42px; height: 42px; }
+    }
+    @media (max-width: 360px) {
+      .live-video { width: calc(100% + 32px); margin-left: -16px; }
     }
   </style>
 </head>
