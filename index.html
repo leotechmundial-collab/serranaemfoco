@@ -1,0 +1,1369 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#131514">
+  <meta
+    name="description"
+    content="Serrana em Foco: espaço independente para acompanhar e questionar a atuação política em Serrana, São Paulo."
+  >
+  <title>Serrana em Foco | Política sob observação</title>
+  <link rel="icon" href="favicon.svg">
+
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #131514;
+      --text: #f1f0e9;
+      --muted: #a4aaa5;
+      --accent: #daff6c;
+      --line: #373c36;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 28px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: #daff6c33;
+    }
+
+    a:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 7px;
+    }
+
+    img,
+    video,
+    iframe {
+      max-width: 100%;
+    }
+
+    h1,
+    h2,
+    h3,
+    p,
+    .source-status {
+      overflow-wrap: anywhere;
+    }
+
+    .header {
+      max-width: 1440px;
+      margin: auto;
+      padding: 30px 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line);
+      gap: 24px;
+    }
+
+    .brand {
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: -1px;
+      line-height: 1;
+    }
+
+    .header > *,
+    .intro > *,
+    .section-heading > * {
+      min-width: 0;
+    }
+
+    main {
+      max-width: 1440px;
+      margin: auto;
+    }
+
+    .opening {
+      padding: 30px 5% 68px;
+    }
+
+    .video-frame {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid #3e4836;
+    }
+
+    .live-video {
+      aspect-ratio: 16 / 9;
+      min-height: 0;
+      background: #080a08;
+    }
+
+    .live-video iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 16 / 9;
+      border: 0;
+    }
+
+    .video-caption {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 4px 20px;
+      margin-top: 10px;
+      font-family: "Courier New", monospace;
+      font-size: .8125rem;
+      line-height: 1.5;
+      color: var(--muted);
+    }
+
+    .video-caption a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      color: var(--text);
+    }
+
+    .intro {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 70px;
+      margin-top: 40px;
+    }
+
+    h1 {
+      font-size: clamp(38px, 4.4vw, 66px);
+      letter-spacing: -2.5px;
+      font-weight: 500;
+      line-height: 1.08;
+      margin: 0;
+    }
+
+    em {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: normal;
+      color: var(--accent);
+    }
+
+    .intro-copy p {
+      font-size: 17px;
+      line-height: 1.65;
+      margin: 0 0 14px;
+      max-width: 600px;
+    }
+
+    .intro-copy .secondary {
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .scroll-link {
+      display: inline-flex;
+      gap: 30px;
+      align-items: center;
+      color: var(--accent);
+      font-size: 15px;
+      margin-top: 7px;
+      padding-bottom: 7px;
+      border-bottom: 1px solid #728744;
+      min-height: 44px;
+    }
+
+    .scroll-link span {
+      font-size: 24px;
+    }
+
+    .politicians {
+      padding: 50px 5% 85px;
+      background: #ebece6;
+      color: #1b211c;
+      scroll-margin-top: 0;
+    }
+
+    .section-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      font-family: "Courier New", monospace;
+      font-size: 13px;
+      letter-spacing: 1px;
+      border-bottom: 1px solid #bac0b5;
+      padding-bottom: 20px;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(32px, 4vw, 52px);
+      line-height: 1.12;
+      letter-spacing: -1.8px;
+      font-weight: 500;
+      margin: 0;
+    }
+
+    .section-heading em {
+      color: #51612e;
+    }
+
+    .section-heading p {
+      font-size: 16px;
+      color: #555f52;
+      max-width: 250px;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .draft-note {
+      font-size: 14px;
+      line-height: 1.7;
+      color: #596250;
+      margin: 20px 0 32px;
+      max-width: 850px;
+    }
+
+    .group-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+      border-bottom: 1px solid #bcc4b4;
+      padding-bottom: 16px;
+      margin: 36px 0 24px;
+      flex-wrap: wrap;
+    }
+
+    .group-title h3 {
+      font-size: 1.6rem;
+      font-weight: 500;
+      margin: 0;
+      letter-spacing: -.5px;
+    }
+
+    .group-title > span {
+      font-family: "Courier New", monospace;
+      font-size: .75rem;
+      letter-spacing: 1px;
+      color: #586544;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .cards.executive {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-items: start;
+    }
+
+    .card {
+      min-width: 0;
+    }
+
+    .portrait {
+      margin: 0;
+      aspect-ratio: 4 / 3;
+      position: relative;
+      background: #d6d9cf;
+      border: 1px solid #c5ccbc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .portrait img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center center;
+    }
+
+    .card-content {
+      padding-top: 23px;
+    }
+
+    .tag {
+      font-family: "Courier New", monospace;
+      font-size: 12px;
+      letter-spacing: 1px;
+      color: #586544;
+    }
+
+    .card h3 {
+      font-size: 23px;
+      font-weight: 500;
+      letter-spacing: -.6px;
+      margin: 12px 0;
+    }
+
+    .card h4 {
+      font-size: 1.125rem;
+      line-height: 1.4;
+      font-weight: 600;
+      margin: 22px 0 12px;
+    }
+
+    .card p {
+      font-size: 16px;
+      line-height: 1.65;
+      color: #525b4f;
+      margin: 0 0 25px;
+    }
+
+    .card p.full-name {
+      font-size: .875rem;
+      line-height: 1.5;
+      color: #596250;
+      margin: 0 0 18px;
+    }
+
+    .card .editorial-note {
+      border-left: 2px solid #a0ad8f;
+      padding-left: 14px;
+      font-size: .9375rem;
+    }
+
+    .source-status {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px 20px;
+      padding-top: 15px;
+      border-top: 1px solid #c4cabc;
+      font-family: "Courier New", monospace;
+      font-size: 13px;
+      color: #5c6656;
+    }
+
+    .source-status a,
+    .context-sources a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 44px;
+      font-size: .875rem;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      line-height: 1.5;
+    }
+
+    .politicians a:focus-visible {
+      outline-color: #51612e;
+    }
+
+    .source-status a:hover,
+    .context-sources a:hover {
+      color: #1b211c;
+    }
+
+    .council-title {
+      margin-top: 56px;
+    }
+
+    .voting-context {
+      max-width: 850px;
+      margin-bottom: 30px;
+    }
+
+    .voting-context h4 {
+      font-size: 1.25rem;
+      margin: 0 0 10px;
+      font-weight: 500;
+    }
+
+    .voting-context p {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #525b4f;
+      margin: 0;
+    }
+
+    .context-sources {
+      display: flex;
+      gap: 4px 24px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+      color: #425331;
+    }
+
+    .vote {
+      border-top: 1px solid #c4cabc;
+      margin-top: 18px;
+      padding: 16px 0 20px;
+    }
+
+    .vote > span {
+      font-size: .75rem;
+      font-family: "Courier New", monospace;
+      letter-spacing: .75px;
+      color: #5c6656;
+    }
+
+    .vote p {
+      color: #273222;
+      margin: 8px 0;
+      font-size: 1.125rem;
+      line-height: 1.4;
+    }
+
+    .vote small {
+      font-size: .8125rem;
+      color: #5c6656;
+      line-height: 1.5;
+      display: block;
+    }
+
+    .photo-credit {
+      font-size: .8125rem;
+      line-height: 1.6;
+      color: #5c6656;
+      border-top: 1px solid #c4cabc;
+      padding-top: 22px;
+      margin: 38px 0 0;
+    }
+
+    footer {
+      max-width: 1440px;
+      margin: auto;
+      padding: 35px 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    footer p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+      max-width: 300px;
+    }
+
+    footer > span {
+      font-family: "Courier New", monospace;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .footer-brand {
+      font-size: 15px;
+      letter-spacing: 1px;
+      font-weight: 700;
+      display: flex;
+      gap: 20px;
+      min-height: 44px;
+    }
+
+    .footer-brand span {
+      color: var(--accent);
+    }
+
+    @media (min-width: 1600px) {
+      .opening {
+        padding-top: 35px;
+      }
+    }
+
+    @media (max-width: 1000px) {
+      .intro {
+        gap: 32px;
+      }
+
+      .cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 32px 24px;
+      }
+
+      .section-heading {
+        align-items: start;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .section-heading p {
+        max-width: none;
+      }
+
+      footer > span {
+        display: none;
+      }
+    }
+
+    @media (max-width: 850px) {
+      .intro {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 24px;
+      }
+
+      .intro-copy p {
+        max-width: none;
+      }
+    }
+
+    @media (max-width: 700px) {
+      html {
+        scroll-padding-top: 16px;
+      }
+
+      .header {
+        padding: 16px 20px;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .brand {
+        font-size: 1.375rem;
+        flex-shrink: 0;
+      }
+
+      .opening {
+        padding: 20px 20px 36px;
+      }
+
+      .live-video {
+        border-radius: 6px;
+      }
+
+      .video-caption {
+        font-size: .75rem;
+        gap: 0 16px;
+        margin-top: 8px;
+      }
+
+      .intro {
+        margin-top: 28px;
+        gap: 20px;
+      }
+
+      h1 {
+        font-size: clamp(2rem, 8.5vw, 3rem);
+        letter-spacing: -1px;
+        line-height: 1.12;
+      }
+
+      .intro-copy p,
+      .intro-copy .secondary {
+        font-size: 1rem;
+        line-height: 1.65;
+        margin-bottom: 12px;
+      }
+
+      .scroll-link {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        font-size: 1rem;
+        padding: 10px 0;
+        margin-top: 16px;
+      }
+
+      .politicians {
+        padding: 30px 20px 40px;
+      }
+
+      .section-top {
+        flex-wrap: wrap;
+        font-size: .75rem;
+        line-height: 1.6;
+        letter-spacing: .5px;
+        gap: 6px 16px;
+        padding-bottom: 14px;
+      }
+
+      .section-heading {
+        margin-top: 23px;
+        gap: 12px;
+      }
+
+      .section-heading h2 {
+        font-size: clamp(1.875rem, 7.6vw, 2.75rem);
+        line-height: 1.15;
+        letter-spacing: -1px;
+      }
+
+      .section-heading p {
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+
+      .draft-note {
+        font-size: .875rem;
+        line-height: 1.6;
+        margin: 16px 0 26px;
+      }
+
+      .cards,
+      .cards.executive {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 32px;
+      }
+
+      .portrait {
+        aspect-ratio: 4 / 3;
+        border-radius: 6px;
+      }
+
+      .card-content {
+        padding-top: 18px;
+      }
+
+      .tag {
+        font-size: .75rem;
+        letter-spacing: .5px;
+        line-height: 1.6;
+      }
+
+      .card h3 {
+        font-size: 1.5rem;
+        line-height: 1.25;
+        letter-spacing: -.4px;
+        margin: 10px 0;
+      }
+
+      .card p {
+        font-size: 1rem;
+        line-height: 1.65;
+        margin-bottom: 18px;
+      }
+
+      .source-status {
+        font-size: .875rem;
+        line-height: 1.5;
+        padding-top: 13px;
+        gap: 0 18px;
+      }
+
+      .group-title {
+        margin-top: 28px;
+        margin-bottom: 20px;
+        padding-bottom: 12px;
+      }
+
+      .group-title h3 {
+        font-size: 1.375rem;
+      }
+
+      .council-title {
+        margin-top: 40px;
+      }
+
+      .vote {
+        padding-bottom: 14px;
+      }
+
+      .voting-context {
+        margin-bottom: 24px;
+      }
+
+      .photo-credit {
+        margin-top: 30px;
+      }
+
+      footer {
+        padding: 24px 20px calc(24px + env(safe-area-inset-bottom));
+        align-items: start;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .footer-brand {
+        font-size: .875rem;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+      }
+
+      footer p {
+        font-size: .875rem;
+        margin: 0;
+        max-width: none;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .header,
+      .opening,
+      .politicians,
+      footer {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      .header {
+        gap: 12px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <div class="brand">SERRANA EM FOCO</div>
+  </header>
+
+  <main id="inicio">
+    <section class="opening" aria-labelledby="intro-heading">
+      <div class="video-frame live-video" id="video-area">
+        <iframe
+          src="https://www.youtube.com/embed/l-wPCW6DkMQ?autoplay=1&amp;mute=1&amp;playsinline=1&amp;rel=0"
+          title="Vídeo em destaque — Serrana em Foco"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
+          allowfullscreen
+          referrerpolicy="strict-origin-when-cross-origin"
+        ></iframe>
+      </div>
+
+      <div class="video-caption">
+        <span>VÍDEO EM DESTAQUE</span>
+        <a
+          href="https://www.youtube.com/watch?v=l-wPCW6DkMQ"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Assistir no YouTube ↗</a>
+      </div>
+
+      <div class="intro">
+        <h1 id="intro-heading">
+          A cidade é nossa.<br>
+          A cobrança <em>também.</em>
+        </h1>
+
+        <div class="intro-copy">
+          <p>
+            Acompanhar quem decide o futuro de Serrana é um exercício de
+            cidadania. Este espaço reúne críticas à atuação dos representantes
+            públicos, com contexto e fontes para cada informação.
+          </p>
+          <p class="secondary">
+            Decisões, promessas e consequências. Porque a política da nossa
+            cidade merece atenção.
+          </p>
+          <a href="#politicos" class="scroll-link">
+            Conheça os perfis <span aria-hidden="true">↓</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="politicians"
+      id="politicos"
+      aria-labelledby="politicians-heading"
+    >
+      <div class="section-top">
+        <span class="section-index">02 / QUEM NOS REPRESENTA</span>
+        <span>SERRANA, SP</span>
+      </div>
+
+      <div class="section-heading">
+        <h2 id="politicians-heading">Mandatos sob <em>análise.</em></h2>
+        <p>
+          Prefeito, vice-prefeita e os 13 vereadores da legislatura 2025–2028.
+        </p>
+      </div>
+
+      <p class="draft-note">
+        Consulta às fontes oficiais em 23/09/2026.
+        Cada registro tem um link para conferência.
+      </p>
+
+      <div class="group-title">
+        <h3>Prefeitura</h3>
+        <span>PODER EXECUTIVO</span>
+      </div>
+
+      <div class="cards executive">
+        <article class="card">
+          <figure class="portrait">
+            <img
+              src="assets/prefeito.jpg"
+              alt="Retrato oficial de Leonardo Caressato Capitelli"
+              loading="lazy"
+              decoding="async"
+              width="480"
+              height="480"
+            >
+          </figure>
+
+          <div class="card-content">
+            <span class="tag">PREFEITO</span>
+            <h3>Léo Capitelli</h3>
+            <p class="full-name">Leonardo Caressato Capitelli</p>
+
+            <h4>Contas de 2022 questionadas pelo TCE</h4>
+            <p>
+              O TCE-SP emitiu parecer desfavorável em 27/08/2024, apontando
+              déficit financeiro, aumento da dívida, inconsistências contábeis
+              e atraso em pagamentos judiciais.
+            </p>
+            <p>
+              Na defesa, Capitelli alegou melhora das finanças, dívidas de
+              gestões anteriores e correções contábeis.
+            </p>
+            <p>
+              <strong>Desfecho na Câmara:</strong>
+              as contas foram aprovadas pelo Decreto Legislativo nº 8/2026,
+              de 06/05/2026, contrariando o parecer do TCE.
+            </p>
+
+            <div class="source-status">
+              <a
+                href="https://www.serrana.sp.gov.br/gabinete/prefeito/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Perfil oficial <span aria-hidden="true">↗</span></a>
+
+              <a
+                href="https://www.serrana.sp.leg.br/processo-legislativo/julgamento-de-contas/contas-de-2022/parecer-contas-prefeitura-serrana-2022/at_download/file"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Parecer do TCE · PDF <span aria-hidden="true">↗</span></a>
+
+              <a
+                href="https://www.serrana.sp.leg.br/processo-legislativo/julgamento-de-contas/contas-de-2022/pedido-de-reexame-tribunal-pleno-2013-sessao-03-12-2025/at_download/file"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Reexame e defesa · PDF <span aria-hidden="true">↗</span></a>
+
+              <a
+                href="https://www.serrana.sp.leg.br/processo-legislativo/julgamento-de-contas/contas-de-2022/decreto-legislativo-no-8-2026/at_download/file"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Decisão da Câmara · PDF <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <figure class="portrait">
+            <img
+              src="assets/vice.jpg"
+              alt="Retrato oficial de Leila Aparecida do Valle Gusmão"
+              loading="lazy"
+              decoding="async"
+              width="480"
+              height="480"
+            >
+          </figure>
+
+          <div class="card-content">
+            <span class="tag">VICE-PREFEITA</span>
+            <h3>Leila Gusmão</h3>
+            <p class="full-name">Leila Aparecida do Valle Gusmão</p>
+            <h4>Quem ocupa o cargo</h4>
+            <p>
+              Apresentada como vice-prefeita no portal municipal. Sua biografia
+              informa formação em Pedagogia e experiência em gestão
+              administrativa e na área da Saúde.
+            </p>
+            <p class="editorial-note">
+              Este perfil ainda não contém uma análise crítica individual
+              com documentação verificada.
+            </p>
+            <div class="source-status">
+              <a
+                href="https://www.serrana.sp.gov.br/gabinete/vice/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Perfil oficial <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="group-title council-title">
+        <h3>Câmara Municipal</h3>
+        <span>PODER LEGISLATIVO</span>
+      </div>
+
+      <div class="voting-context">
+        <h4>Como votaram nas contas de 2022?</h4>
+        <p>
+          Em 05/05/2026, a Câmara aprovou as contas do Executivo por 10 votos
+          a 3, apesar do parecer desfavorável do TCE. Abaixo está o voto de
+          cada vereador. O registro da votação não representa uma acusação
+          de irregularidade.
+        </p>
+
+        <div class="context-sources">
+          <a
+            href="https://sapl.serrana.sp.leg.br/sessao/273/resumo"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Votação nominal <span aria-hidden="true">↗</span></a>
+
+          <a
+            href="https://www.serrana.sp.leg.br/processo-legislativo/julgamento-de-contas/contas-de-2022/decreto-legislativo-no-8-2026/at_download/file"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Decreto nº 8/2026 · PDF <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <figure class="portrait">
+            <img
+              src="assets/3.jpg"
+              alt="Retrato oficial de Bis do Hospital"
+              loading="lazy"
+              decoding="async"
+              width="480"
+              height="480"
+            >
+          </figure>
+          <div class="card-content">
+            <span class="tag">
+              Vereador · Presidente da Câmara · UNIÃO
+            </span>
+            <h3>Bis do Hospital</h3>
+            <div class="vote">
+              <span>CONTAS DE 2022</span>
+              <p>A favor da aprovação</p>
+              <small>Votação de 05/05/2026 · PDL 6/2026</small>
+            </div>
+            <div class="source-status">
+              <a href="https://sapl.serrana.sp.leg.br/parlamentar/3"
+                 target="_blank" rel="noopener noreferrer">
+                Perfil oficial <span aria-hidden="true">↗</span>
+              </a>
+              <a href="https://sapl.serrana.sp.leg.br/sessao/273/resumo"
+                 target="_blank" rel="noopener noreferrer">
+                Consultar votação <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <figure class="portrait">
+            <img
+              src="assets/30.jpg"
+              alt="Retrato oficial de Cintia do Duda"
+              loading="lazy"
+              decoding="async"
+              width="480"
+              height="480"
+            >
+          </figure>
+          <div class="card-content">
+            <span class="tag">Vereadora · PSD</span>
+            <h3>Cintia do Duda</h3>
+            <div class="vote">
+              <span>CONTAS DE 2022</span>
+              <p>Contra a aprovação</p>
+              <small>Votação de 05/05/2026 · PDL 6/2026</small>
+            </div>
+            <div class="source-status">
+              <a href="https://sapl.serrana.sp.leg.br/parlamentar/30"
+                 target="_blank" rel="noopener noreferrer">
+                Perfil oficial <span aria-hidden="true">↗</span>
+              </a>
+              <a href="https://sapl.serrana.sp.leg.br/sessao/273/resumo"
+                 target="_blank" rel="noopener noreferrer">
+                Consultar votação <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <figure class="portrait">
+            <img
+              src="assets/32.jpg"
+              alt="Retrato oficial de Edcarlos Ticalão"
+              loading="lazy"
+              decoding="async"
+              width="480"
+              height="480"
+            >
+          </figure>
+          <div class="card-content">
+            <span class="tag">Vereador · PT</span>
+            <h3>Edcarlos Ticalão</h3>
+            <div class="vote">
+              <span>CONTAS DE 2022</span>
+              <p>A favor da aprovação</p>
+              <small>Votação de 05/05/2026 · PDL 6/2026</small>
+            </div>
+            <div class="source-status">
+              <a href="https://sapl.serrana.sp.leg.br/parlamentar/32"
+                 target="_blank" rel="noopener noreferrer">
+                Perfil oficial <span aria-hidden="true">↗</span>
+              </a>
+              <a href="https://sapl.serrana.sp.leg.br/sessao/273/resumo"
+                 target="_blank" rel="noopener noreferrer">
+                Consultar votação <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <figure class="portrait">
+            <img
+              src="assets/31.jpg"
+              alt="Retrato oficial de Edina da Farmácia"
+              loading="lazy"
+              decoding="async"
+              width="480"
+              height="480"
+            >
+          </figure>
+          <div class="card-content">
+            <span class="tag">Vereadora · REPUBLICANOS</span>
+            <h3>Edina da Farmácia</h3>
+            <div class="vote">
+              <span>CONTAS DE 2022</span>
+              <p>A favor da aprovação</p>
+              <small>Votação de 05/05/2026 · PDL 6/2026</small>
+            </div>
+            <div class="source-status">
+              <a href="https://sapl.serrana.sp.leg.br/parlamentar/31"
+                 target="_blank" rel="noopener noreferrer">
+                Perfil oficial <span aria-hidden="true">↗</span>
+              </a>
+              <a href="https://sapl.serrana.sp.leg.br/sessao/273/resumo"
+                 target="_blank" rel="noopener noreferrer">
+                Consultar votação <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <figure class="portrait">
+            <img
+              src="assets/33.jpg"
+              alt="Retrato oficial de Fernandes Fimper"
+              loading="lazy"
+              decoding="async"
+              width="480"
+              height="480"
+            >
+          </figure>
+          <div class="card-content">
+            <span class="tag">
+              Vereador · Vice-presidente da Câmara · UNIÃO
+            </span>
+            <h3>Fernandes Fimper</h3>
+            <div class="vote">
+              <span>CONTAS DE 2022</span>
+              <p>A favor da aprovação</p>
+              <small>Votação de 05/05/2026 · PDL 6/2026</small>
+            </div>
+            <div class="source-status">
+              <a href="https://sapl.serrana.sp.leg.br/parlamentar/33"
+                 target="_blank" rel="noopener noreferrer">
+                Perfil oficial <span aria-hidden="true">↗</span>
+              </a>
+              <a href="https://sapl.serrana.sp.leg.br/sessao/273/resumo"
+                 target="_blank" rel="noopener noreferrer">
+                Consultar votação <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <figure class="portrait">
+            <img
+              src="assets/34.jpg"
+              alt="Retrato oficial de Luiz Paraguai"
+              loading="lazy"
+              decoding="async"
+              width="480"
+              height="480"
+            >
+          </figure>
+          <div class="card-content">
+            <span class="tag">Vereador · REPUBLICANOS</span>
+            <h3>Luiz Paraguai</h3>
+            <div class="vote">
+              <span>CONTAS DE 2022</span>
+              <p>A favor da aprovação</p>
+              <small>Votação de 05/05/2026 · PDL 6/2026</small>
+            </div>
+            <div class="source-status">
+              <a href="https://sapl.serrana.sp.leg.br/parlamentar/34"
+                 target="_blank" rel="noopener noreferrer">
+                Perfil oficial <span aria-hidden="true">↗</span>
+              </a>
+              <a href="https://sapl.serrana.sp.leg.br/sessao/273/resumo"
+                 target="_blank" rel="noopener noreferrer">
+                Consultar votação <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <figure class="portrait">
+            <img
+              src="assets/8.jpg"
+              alt="Retrato oficial de Lúcia Poiares"
+              loading="lazy"
+              decoding="async"
+              width="480"
+              height="480"
+            >
+          </figure>
+          <div class="card-content">
+            <span class="tag">Vereadora · MDB</span>
+            <h3>Lúcia Poiares</h3>
+            <div class="vote">
+              <span>CONTAS DE 2022</span>
+              <p>A favor da aprovação</p>
+              <small>Votação de 05/05/2026 · PDL 6/2026</small>
+            </div>
+            <div class="source-status">
+              <a href="https://sapl.serrana.sp.leg.br/parlamentar/8"
+                 target="_blank" rel="noopener noreferrer">
+                Perfil oficial <span aria-hidden="true">↗</span>
+              </a>
+              <a href="https://sapl.serrana.sp.leg.br/sessao/273/resumo"
+                 target="_blank" rel="noopener noreferrer">
+                Consultar votação <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <figure class="portrait">
+            <img
+              src="assets/27.jpg"
+              alt="Retrato oficial de Maria do Tenório"
+              loading="lazy"
+              decoding="async"
+              width="480"
+              height="480"
+            >
+          </figure>
+          <div class="card-content">
+            <span class="tag">Vereadora · UNIÃO</span>
+            <h3>Maria do Tenório</h3>
+            <div class="vote">
+              <span>CONTAS DE 2022</span>
+              <p>A favor da aprovação</p>
+              <small>Votação de 05/05/2026 · PDL 6/2026</small>
+            </div>
+            <div class="source-status">
+              <a href="https://sapl.serrana.sp.leg.br/parlamentar/27"
+                 target="_blank" rel="noopener noreferrer">
+                Perfil oficial <span aria-hidden="true">↗</span>
+              </a>
+              <a href="https://sapl.serrana.sp.leg.br/sessao/273/resumo"
+                 target="_blank" rel="noopener noreferrer">
+                Consultar votação <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <figure class="portrait">
+            <img
+              src="assets/35.jpg"
+              alt="Retrato oficial de Paulo Ricardo"
+              loading="lazy"
+              decoding="async"
+              width="480"
+              height="480"
+            >
+          </figure>
+          <div class="card-content">
+            <span class="tag">Vereador · PP</span>
+            <h3>Paulo Ricardo</h3>
+            <div class="vote">
+              <span>CONTAS DE 2022</span>
+              <p>Contra a aprovação</p>
+              <small>Votação de 05/05/2026 · PDL 6/2026</small>
+            </div>
+            <div class="source-status">
+              <a href="https://sapl.serrana.sp.leg.br/parlamentar/35"
+                 target="_blank" rel="noopener noreferrer">
+                Perfil oficial <span aria-hidden="true">↗</span>
+              </a>
+              <a href="https://sapl.serrana.sp.leg.br/sessao/273/resumo"
+                 target="_blank" rel="noopener noreferrer">
+                Consultar votação <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <figure class="portrait">
+            <img
+              src="assets/26.jpg"
+              alt="Retrato oficial de Policial Paulo Cassiolato"
+              loading="lazy"
+              decoding="async"
+              width="480"
+              height="480"
+            >
+          </figure>
+          <div class="card-content">
+            <span class="tag">Vereador · PP</span>
+            <h3>Policial Paulo Cassiolato</h3>
+            <div class="vote">
+              <span>CONTAS DE 2022</span>
+              <p>A favor da aprovação</p>
+              <small>Votação de 05/05/2026 · PDL 6/2026</small>
+            </div>
+            <div class="source-status">
+              <a href="https://sapl.serrana.sp.leg.br/parlamentar/26"
+                 target="_blank" rel="noopener noreferrer">
+                Perfil oficial <span aria-hidden="true">↗</span>
+              </a>
+              <a href="https://sapl.serrana.sp.leg.br/sessao/273/resumo"
+                 target="_blank" rel="noopener noreferrer">
+                Consultar votação <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <figure class="portrait">
+            <img
+              src="assets/23.jpg"
+              alt="Retrato oficial de Protetora Rose Storari"
+              loading="lazy"
+              decoding="async"
+              width="480"
+              height="480"
+            >
+          </figure>
+          <div class="card-content">
+            <span class="tag">Vereadora · PSD</span>
+            <h3>Protetora Rose Storari</h3>
+            <div class="vote">
+              <span>CONTAS DE 2022</span>
+              <p>Contra a aprovação</p>
+              <small>Votação de 05/05/2026 · PDL 6/2026</small>
+            </div>
+            <div class="source-status">
+              <a href="https://sapl.serrana.sp.leg.br/parlamentar/23"
+                 target="_blank" rel="noopener noreferrer">
+                Perfil oficial <span aria-hidden="true">↗</span>
+              </a>
+              <a href="https://sapl.serrana.sp.leg.br/sessao/273/resumo"
+                 target="_blank" rel="noopener noreferrer">
+                Consultar votação <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <figure class="portrait">
+            <img
+              src="assets/13.jpg"
+              alt="Retrato oficial de Thiago da Academia"
+              loading="lazy"
+              decoding="async"
+              width="480"
+              height="480"
+            >
+          </figure>
+          <div class="card-content">
+            <span class="tag">Vereador · MDB</span>
+            <h3>Thiago da Academia</h3>
+            <div class="vote">
+              <span>CONTAS DE 2022</span>
+              <p>A favor da aprovação</p>
+              <small>Votação de 05/05/2026 · PDL 6/2026</small>
+            </div>
+            <div class="source-status">
+              <a href="https://sapl.serrana.sp.leg.br/parlamentar/13"
+                 target="_blank" rel="noopener noreferrer">
+                Perfil oficial <span aria-hidden="true">↗</span>
+              </a>
+              <a href="https://sapl.serrana.sp.leg.br/sessao/273/resumo"
+                 target="_blank" rel="noopener noreferrer">
+                Consultar votação <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <figure class="portrait">
+            <img
+              src="assets/22.jpg"
+              alt="Retrato oficial de Waldenor Cabeleireiro"
+              loading="lazy"
+              decoding="async"
+              width="480"
+              height="480"
+            >
+          </figure>
+          <div class="card-content">
+            <span class="tag">Vereador · MDB</span>
+            <h3>Waldenor Cabeleireiro</h3>
+            <div class="vote">
+              <span>CONTAS DE 2022</span>
+              <p>A favor da aprovação</p>
+              <small>Votação de 05/05/2026 · PDL 6/2026</small>
+            </div>
+            <div class="source-status">
+              <a href="https://sapl.serrana.sp.leg.br/parlamentar/22"
+                 target="_blank" rel="noopener noreferrer">
+                Perfil oficial <span aria-hidden="true">↗</span>
+              </a>
+              <a href="https://sapl.serrana.sp.leg.br/sessao/273/resumo"
+                 target="_blank" rel="noopener noreferrer">
+                Consultar votação <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <p class="photo-credit">
+        Retratos: Prefeitura Municipal e Câmara Municipal de Serrana.
+        Veja a origem em “Perfil oficial” de cada representante.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <a href="#inicio" class="footer-brand">
+      SERRANA EM FOCO <span aria-hidden="true">↗</span>
+    </a>
+    <p>Espaço independente. Sem vínculo com órgãos públicos.</p>
+    <span>POLÍTICA LOCAL · INTERESSE PÚBLICO</span>
+  </footer>
+</body>
+</html>
