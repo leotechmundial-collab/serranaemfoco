@@ -753,8 +753,10 @@
     .profile-links summary:focus-visible { outline: 3px solid #51612e; outline-offset: 4px; }
     .profile-links[open] summary { transform: rotate(45deg); }
     .profile-menu { position: absolute; z-index: 10; top: calc(100% + 12px); right: 0; width: min(280px, calc(100vw - 48px)); padding: 10px; border: 1px solid #c8cec3; border-radius: 12px; background: #fff; box-shadow: 0 18px 38px #1b211c2b; }
-    .profile-menu a { display: block; padding: 12px 14px; border-radius: 8px; color: #273222; font-size: .9rem; line-height: 1.4; text-decoration: none; }
-    .profile-menu a:hover, .profile-menu a:focus-visible { background: #edf3de; color: #1b211c; }
+    .profile-menu a { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; padding: 12px 14px; border: 1px solid #c8d8ee; border-radius: 8px; background: #f3f7fc; color: #1456a0; font-size: .9rem; font-weight: 700; line-height: 1.4; text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+    .profile-menu a::after { content: "↗"; flex: 0 0 auto; font-size: 1.05rem; line-height: 1.2; text-decoration: none; }
+    .profile-menu a + a { margin-top: 8px; }
+    .profile-menu a:hover, .profile-menu a:focus-visible { border-color: #1456a0; background: #e7f0fb; color: #0b3f7a; }
     @media (max-width: 1000px) { .politicians .cards { grid-template-columns: 1fr; } }
     @media (max-width: 520px) {
       .profile-card { grid-template-columns: 76px minmax(0, 1fr) 44px; gap: 13px; padding: 16px; border-radius: 14px; }
