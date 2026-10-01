@@ -739,11 +739,29 @@
     .instagram-link { text-align: center; margin-top: 16px; }
     .instagram-link a { display: inline-flex; align-items: center; min-height: 48px; color: var(--accent); text-decoration: underline; text-underline-offset: 5px; font-size: 1rem; }
     .intro { display: block; text-align: center; }
-    .card h2 { font-size: 1.5rem; line-height: 1.3; margin: 0 0 20px; }
-    .portrait { aspect-ratio: 3 / 4; }
-    .portrait img { object-fit: contain; }
-    .source-status { margin-top: 18px; flex-direction: column; }
-    .photo-credit a { text-decoration: underline; }
+    .politicians .cards { align-items: start; }
+    .profile-card { display: grid; grid-template-columns: 96px minmax(0, 1fr) 48px; align-items: center; gap: 18px; padding: 22px; background: #fff; border: 1px solid #c8cec3; border-radius: 18px; box-shadow: 0 12px 30px #1b211c12; }
+    .profile-photo { width: 96px; height: 96px; margin: 0; border: 3px solid #d7ddcf; border-radius: 50%; overflow: hidden; background: #e6e9e1; }
+    .profile-photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+    .profile-name { min-width: 0; }
+    .profile-name h2 { margin: 0 0 8px; color: #1b211c; font-size: 1.25rem; line-height: 1.2; letter-spacing: -.35px; }
+    .profile-party { display: inline-flex; align-items: center; min-height: 28px; padding: 5px 10px; border-radius: 999px; background: #e4efbd; color: #34401d; font-family: "Courier New", monospace; font-size: .8125rem; font-weight: 700; letter-spacing: .6px; }
+    .profile-links { position: relative; justify-self: end; }
+    .profile-links summary { display: grid; place-items: center; width: 46px; height: 46px; padding: 0; border-radius: 50%; background: #1b211c; color: #daff6c; cursor: pointer; font-size: 1.75rem; line-height: 1; list-style: none; transition: transform .2s ease, background .2s ease; }
+    .profile-links summary::-webkit-details-marker { display: none; }
+    .profile-links summary:hover { background: #33402e; }
+    .profile-links summary:focus-visible { outline: 3px solid #51612e; outline-offset: 4px; }
+    .profile-links[open] summary { transform: rotate(45deg); }
+    .profile-menu { position: absolute; z-index: 10; top: calc(100% + 12px); right: 0; width: min(280px, calc(100vw - 48px)); padding: 10px; border: 1px solid #c8cec3; border-radius: 12px; background: #fff; box-shadow: 0 18px 38px #1b211c2b; }
+    .profile-menu a { display: block; padding: 12px 14px; border-radius: 8px; color: #273222; font-size: .9rem; line-height: 1.4; text-decoration: none; }
+    .profile-menu a:hover, .profile-menu a:focus-visible { background: #edf3de; color: #1b211c; }
+    @media (max-width: 1000px) { .politicians .cards { grid-template-columns: 1fr; } }
+    @media (max-width: 520px) {
+      .profile-card { grid-template-columns: 76px minmax(0, 1fr) 44px; gap: 13px; padding: 16px; border-radius: 14px; }
+      .profile-photo { width: 76px; height: 76px; }
+      .profile-name h2 { font-size: 1.05rem; }
+      .profile-links summary { width: 42px; height: 42px; }
+    }
   </style>
 </head>
 
@@ -781,26 +799,34 @@
     </section>
     <section class="politicians" aria-label="Baleia Rossi, Léo Oliveira e Fausto Pinato">
       <div class="cards">
-        <article class="card">
-          <h2>BALEIA ROSSI</h2>
-          <figure class="portrait"><img src="assets/baleia-rossi.jpg" alt="Baleia Rossi" loading="lazy" decoding="async" width="480" height="640"></figure>
-          <div class="source-status">
-            <a href="https://share.google/t4TCvYWCNaV9PjsL1" target="_blank" rel="noopener noreferrer">Ler reportagem · Época (2016)</a>
-            <a href="https://share.google/ju58HcwexKlhARfnL" target="_blank" rel="noopener noreferrer">Ler reportagem · Jornal do Comércio (2021)</a>
-          </div>
+        <article class="profile-card">
+          <figure class="profile-photo"><img src="assets/baleia-rossi.jpg" alt="Baleia Rossi" loading="lazy" decoding="async" width="192" height="192"></figure>
+          <div class="profile-name"><h2>BALEIA ROSSI</h2><span class="profile-party">MDB</span></div>
+          <details class="profile-links">
+            <summary aria-label="Abrir links de Baleia Rossi">+</summary>
+            <div class="profile-menu">
+              <a href="https://share.google/t4TCvYWCNaV9PjsL1" target="_blank" rel="noopener noreferrer">Abrir primeiro link</a>
+              <a href="https://share.google/ju58HcwexKlhARfnL" target="_blank" rel="noopener noreferrer">Abrir segundo link</a>
+            </div>
+          </details>
         </article>
-        <article class="card">
-          <h2>LÉO OLIVEIRA</h2>
-          <figure class="portrait"><img src="assets/leo-oliveira.jpg" alt="Léo Oliveira" loading="lazy" decoding="async" width="480" height="640"></figure>
-          <div class="source-status"><a href="https://share.google/oeH9z88kTXUKAIzkw" target="_blank" rel="noopener noreferrer">Ler reportagem · g1 (2019)</a></div>
+        <article class="profile-card">
+          <figure class="profile-photo"><img src="assets/leo-oliveira.jpg" alt="Léo Oliveira" loading="lazy" decoding="async" width="192" height="192"></figure>
+          <div class="profile-name"><h2>LÉO OLIVEIRA</h2><span class="profile-party">MDB</span></div>
+          <details class="profile-links">
+            <summary aria-label="Abrir links de Léo Oliveira">+</summary>
+            <div class="profile-menu"><a href="https://share.google/oeH9z88kTXUKAIzkw" target="_blank" rel="noopener noreferrer">Abrir link</a></div>
+          </details>
         </article>
-        <article class="card">
-          <h2>FAUSTO PINATO</h2>
-          <figure class="portrait"><img src="assets/fausto-pinato.jpg" alt="Fausto Pinato" loading="lazy" decoding="async" width="480" height="640"></figure>
-          <!-- Link aguardando correção: o endereço recebido trata de Léo Oliveira. -->
+        <article class="profile-card">
+          <figure class="profile-photo"><img src="assets/fausto-pinato.jpg" alt="Fausto Pinato" loading="lazy" decoding="async" width="192" height="192"></figure>
+          <div class="profile-name"><h2>FAUSTO PINATO</h2><span class="profile-party">UNIÃO</span></div>
+          <details class="profile-links">
+            <summary aria-label="Abrir links de Fausto Pinato">+</summary>
+            <div class="profile-menu"><a href="https://share.google/oeH9z88kTXUKAIzkw" target="_blank" rel="noopener noreferrer">Abrir link enviado</a></div>
+          </details>
         </article>
       </div>
-      <p class="photo-credit">Fotos oficiais: <a href="https://www.camara.leg.br/deputados/178975" target="_blank" rel="noopener noreferrer">Câmara dos Deputados — Baleia Rossi</a>; <a href="https://www.al.sp.gov.br/deputado/?matricula=300264" target="_blank" rel="noopener noreferrer">Alesp — Léo Oliveira</a>; <a href="https://www.camara.leg.br/deputados/66828" target="_blank" rel="noopener noreferrer">Câmara dos Deputados — Fausto Pinato</a>.</p>
     </section>
   </main>
 
